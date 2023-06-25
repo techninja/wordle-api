@@ -1,0 +1,135 @@
+{
+  "name": "wordle-api",
+  "version": "1.0.0",
+  "description": "Wordle API POC",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "test": "eslint ./src && jest",
+    "build": "tsc",
+    "format": "prettier 'src/**/*.ts' --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techninja/wordle-api.git"
+  },
+  "author": "techninja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/techninja/wordle-api/issues"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "homepage": "https://github.com/techninja/wordle-api#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.2",
+    "@types/koa": "^2.13.6",
+    "@types/koa-bodyparser": "^4.3.10",
+    "@types/koa-router": "^7.4.4",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^35.0.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.2",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.1.0",
+    "typescript": "5.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": false,
+      "es2021": true,
+      "jest/globals": true,
+      "jest": true
+    },
+    "extends": [
+      "airbnb",
+      "prettier",
+      "standard-with-typescript",
+      "plugin:jest/recommended"
+    ],
+    "plugins": [
+      "prettier",
+      "jest"
+    ],
+    "overrides": [],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "project": [
+        "tsconfig.json"
+      ]
+    },
+    "rules": {
+      "semi": [
+        2,
+        "always"
+      ],
+      "@typescript-eslint/semi": [
+        2,
+        "always"
+      ],
+      "@typescript-eslint/member-delimiter-style": [
+        0
+      ],
+      "comma-dangle": [
+        2,
+        "only-multiline"
+      ],
+      "import/prefer-default-export": [
+        0,
+        "always"
+      ],
+      "import/no-extraneous-dependencies": [
+        0,
+        "always"
+      ],
+      "no-plusplus": [
+        0,
+        "always"
+      ],
+      "no-console": [
+        0,
+        "never"
+      ],
+      "import/no-unresolved": [
+        0,
+        "never"
+      ],
+      "@typescript-eslint/space-before-function-paren": [
+        0
+      ],
+      "no-shadow": [
+        0
+      ],
+      "@typescript-eslint/comma-dangle": [
+        0
+      ],
+      "class-methods-use-this": "warn",
+      "import/extensions": [
+        0
+      ],
+      "jest/no-conditional-expect": [
+        0
+      ]
+    }
+  },
+  "dependencies": {
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^12.0.0",
+    "lowdb": "^6.0.1"
+  }
+}
