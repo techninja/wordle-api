@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WordleAPI Server: Games List/Create Create new game 1`] = `"{"id":1,"status":"started"}"`;
+
+exports[`WordleAPI Server: Games List/Create Create second new game 1`] = `"{"id":2,"status":"started"}"`;
+
+exports[`WordleAPI Server: Games List/Create List new games 1`] = `"[{"id":1,"status":"started"},{"id":2,"status":"started"}]"`;
+
+exports[`WordleAPI Server: Games List/Create No game 3 1`] = `"Not Found"`;
+
+exports[`WordleAPI Server: Games List/Create View game 1 1`] = `"{"id":1,"status":"started"}"`;
+
+exports[`WordleAPI Server: Games List/Create View game 2 1`] = `"{"id":2,"status":"started"}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Create 4 more guesses 1`] = `"{"id":2,"gameId":1,"wordGuess":"testr","matches":[{"letter":"t","matchType":"none"},{"letter":"e","matchType":"none"},{"letter":"s","matchType":"none"},{"letter":"t","matchType":"none"},{"letter":"r","matchType":"partial"}]}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Create 4 more guesses 2`] = `"{"id":3,"gameId":1,"wordGuess":"words","matches":[{"letter":"w","matchType":"correct"},{"letter":"o","matchType":"correct"},{"letter":"r","matchType":"correct"},{"letter":"d","matchType":"correct"},{"letter":"s","matchType":"none"}]}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Create 4 more guesses 3`] = `"{"id":4,"gameId":1,"wordGuess":"fordl","matches":[{"letter":"f","matchType":"none"},{"letter":"o","matchType":"correct"},{"letter":"r","matchType":"correct"},{"letter":"d","matchType":"correct"},{"letter":"l","matchType":"correct"}]}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Create 4 more guesses 4`] = `"{"id":5,"gameId":1,"wordGuess":"testr","matches":[{"letter":"t","matchType":"none"},{"letter":"e","matchType":"none"},{"letter":"s","matchType":"none"},{"letter":"t","matchType":"none"},{"letter":"r","matchType":"partial"}]}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Create last fully correct guess 1`] = `"{"id":6,"gameId":1,"wordGuess":"wordl","matches":[{"letter":"w","matchType":"correct"},{"letter":"o","matchType":"correct"},{"letter":"r","matchType":"correct"},{"letter":"d","matchType":"correct"},{"letter":"l","matchType":"correct"}]}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Create new guess 1`] = `"{"id":1,"gameId":1,"wordGuess":"testr","matches":[{"letter":"t","matchType":"none"},{"letter":"e","matchType":"none"},{"letter":"s","matchType":"none"},{"letter":"t","matchType":"none"},{"letter":"r","matchType":"partial"}]}"`;
+
+exports[`WordleAPI Server: Guesses List/Create Fail to create a 7th guess 1`] = `"Game (ID 1) has ended and is no longer accepting guesses. The word was 'wordl'."`;
+
+exports[`WordleAPI Server: Guesses List/Create See no Guesses for second game 1`] = `"[]"`;
+
+exports[`WordleAPI Server: Guesses List/Create View All Guesses 1`] = `"[{"id":1,"gameId":1,"wordGuess":"testr","matches":[{"letter":"t","matchType":"none"},{"letter":"e","matchType":"none"},{"letter":"s","matchType":"none"},{"letter":"t","matchType":"none"},{"letter":"r","matchType":"partial"}]},{"id":2,"gameId":1,"wordGuess":"testr","matches":[{"letter":"t","matchType":"none"},{"letter":"e","matchType":"none"},{"letter":"s","matchType":"none"},{"letter":"t","matchType":"none"},{"letter":"r","matchType":"partial"}]},{"id":3,"gameId":1,"wordGuess":"words","matches":[{"letter":"w","matchType":"correct"},{"letter":"o","matchType":"correct"},{"letter":"r","matchType":"correct"},{"letter":"d","matchType":"correct"},{"letter":"s","matchType":"none"}]},{"id":4,"gameId":1,"wordGuess":"fordl","matches":[{"letter":"f","matchType":"none"},{"letter":"o","matchType":"correct"},{"letter":"r","matchType":"correct"},{"letter":"d","matchType":"correct"},{"letter":"l","matchType":"correct"}]},{"id":5,"gameId":1,"wordGuess":"testr","matches":[{"letter":"t","matchType":"none"},{"letter":"e","matchType":"none"},{"letter":"s","matchType":"none"},{"letter":"t","matchType":"none"},{"letter":"r","matchType":"partial"}]},{"id":6,"gameId":1,"wordGuess":"wordl","matches":[{"letter":"w","matchType":"correct"},{"letter":"o","matchType":"correct"},{"letter":"r","matchType":"correct"},{"letter":"d","matchType":"correct"},{"letter":"l","matchType":"correct"}]}]"`;

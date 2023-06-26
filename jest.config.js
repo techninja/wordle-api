@@ -9,9 +9,14 @@ export default {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
+  //moduleFileExtensions: ["ts", "js"],
+  moduleNameMapper: {
+    "^(\.\.?\/.+)\.jsx?$": "$1"
+  },
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
     "!**/node_modules/**",
   ],
+  // extensionsToTreatAsEsm: [".ts"],
 };

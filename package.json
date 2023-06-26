@@ -2,10 +2,10 @@
   "name": "wordle-api",
   "version": "1.0.0",
   "description": "Wordle API POC",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start": "tsc && node dist/server.js",
     "test": "eslint ./src && jest",
     "build": "tsc",
     "format": "prettier 'src/**/*.ts' --write"
@@ -31,6 +31,7 @@
     "@types/koa": "^2.13.6",
     "@types/koa-bodyparser": "^4.3.10",
     "@types/koa-router": "^7.4.4",
+    "@types/supertest": "^2.0.12",
     "eslint": "^8.43.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
@@ -44,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^29.5.0",
     "prettier": "^2.8.8",
+    "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "typescript": "5.0"
   },

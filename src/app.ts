@@ -6,7 +6,7 @@ import { GameStatus, WordleAPI } from './WordleAPI.js';
 
 const dbFile = 'wordle-db.json';
 const wordFile = 'words.txt';
-const wordle = new WordleAPI({ dbFile, wordFile });
+export const wordle = new WordleAPI({ dbFile, wordFile });
 
 /**
  * Wordle API Server POC
@@ -34,12 +34,8 @@ const wordle = new WordleAPI({ dbFile, wordFile });
  *
  */
 
-console.log('Welcome to the Wordle API server!');
-console.log(`Today's word is "${wordle.word}", shhhh!`);
-
 // Configure App/API server.
-const app = new Koa();
-const port = process.env.PORT ?? 3000;
+export const app = new Koa();
 const router = new Router();
 
 // GET Games list.
@@ -50,6 +46,7 @@ router.get('/games', async (ctx) => {
 
 // Create new game.
 router.post('/games', async (ctx) => {
+  ctx.status = 201;
   ctx.body = wordle.createGame();
 });
 
@@ -75,18 +72,24 @@ router.post('/games/:gameId/guesses', async (ctx) => {
 
   // Fail for completed games
   if (game.status !== GameStatus.Started) {
-    ctx.throw(406, `Game (ID ${gameId}) has ended and is no longer accepting guesses. The word was '${game.word}'.`);
+    ctx.throw(422, `Game (ID ${gameId}) has ended and is no longer accepting guesses. The word was '${game.word}'.`);
     return;
   }
 
   // Parse body for word.
-  const body: string = ctx.request.body as string;
-  const testWord = body.trim().toLowerCase();
+  let body: string = '';
+
+  // TODO: There's got to be a better way to make TS happy.
+  if (typeof ctx.request.body === 'string') {
+    body = ctx.request.body.trim().toLowerCase();
+  }
+  const testWord = body;
 
   // Throw out anything that isn't the right length.
   if (testWord.length !== wordle.wordLength) {
     ctx.throw(406, `Guesses must be exctly ${wordle.wordLength} characters long`);
   } else {
+    ctx.status = 201;
     ctx.body = wordle.addGuess(game, testWord);
   }
 });
@@ -128,6 +131,3 @@ router.get('/games/:gameId/guesses/:guessId', async (ctx) => {
 // Set body parser, working app middleware, actually start server.
 app.use(bodyParser({ enableTypes: ['text'] }));
 app.use(router.routes());
-
-console.log(`Starting server on localhost:${port}...`);
-app.listen(port);
